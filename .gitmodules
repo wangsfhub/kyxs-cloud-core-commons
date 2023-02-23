@@ -1,0 +1,3 @@
+[submodule "kyxs-cloud-core-commons"]
+	path = kyxs-cloud-core-commons
+	url = https://github.com/wangsfhub/kyxs-cloud-core-commons.git
