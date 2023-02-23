@@ -1,0 +1,10 @@
+ ______     ______     __  __       __        ______     __         ______     __  __     _____
+/\  ___\   /\  == \   /\ \/ /      /\ \      /\  ___\   /\ \       /\  __ \   /\ \/\ \   /\  __-.
+\ \___  \  \ \  __<   \ \  _"-.   _\_\ \     \ \ \____  \ \ \____  \ \ \/\ \  \ \ \_\ \  \ \ \/\ \
+ \/\_____\  \ \_____\  \ \_\ \_\ /\_____\     \ \_____\  \ \_____\  \ \_____\  \ \_____\  \ \____-
+  \/_____/   \/_____/   \/_/\/_/ \/_____/      \/_____/   \/_____/   \/_____/   \/_____/   \/____/
+
+ ${AnsiColor.BRIGHT_GREEN}
+ ${AnsiColor.BRIGHT_GREEN}Project Version: ${AnsiColor.BRIGHT_WHITE} ${project-name.version} ${project-name.formatted-version}
+ ${AnsiColor.BRIGHT_GREEN}Spring Cloud Version: ${AnsiColor.BRIGHT_WHITE} ${spring-cloud.version}${spring-cloud.formatted-version}
+ ${AnsiColor.BRIGHT_GREEN}Spring Boot Version: ${AnsiColor.BRIGHT_WHITE} ${spring-boot.version}${spring-boot.formatted-version}
