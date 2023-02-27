@@ -4,6 +4,7 @@ import com.kyxs.cloud.core.base.exception.BusinessException;
 import com.kyxs.cloud.core.base.result.R;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -18,7 +19,7 @@ public class GlobalExceptionHandler {
     @ResponseBody
     @ExceptionHandler(BusinessException.class)
     public R handleBusinessException(BusinessException e){
-        log.error("BusinessException：",e);
+        log.error(e.getMessage(),e);
         R<String> r = new R();
         String message = e.getMessage();
         r.setCode(e.getCode());
@@ -34,10 +35,20 @@ public class GlobalExceptionHandler {
         }
         return r;
     }
+    /**
+     * 自定义验证异常
+     */
+    @ResponseBody
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public R handleMethodArgumentNotValidException(MethodArgumentNotValidException e) {
+        log.error(e.getMessage(), e);
+        String message = e.getBindingResult().getFieldError().getDefaultMessage();
+        return R.failed(message);
+    }
     @ResponseBody
     @ExceptionHandler(Exception.class)
     public R handleException(Exception e){
-        log.error("Exception：",e);
+        log.error(e.getMessage(),e);
         R<String> r = new R();
         r.setCode(1);
         r.setMsg("服务器异常，请联系管理");
