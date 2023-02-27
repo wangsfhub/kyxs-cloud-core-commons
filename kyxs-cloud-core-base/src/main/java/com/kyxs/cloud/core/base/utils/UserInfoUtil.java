@@ -25,7 +25,24 @@ public class UserInfoUtil {
             userInfo.setUserName("admin");
             userInfo.setCusId(1L);
             userInfo.setTenantId(1L);
-            userInfo.setAccessToken("xxxxxxxxxxx");
+            userInfo.setAccessToken("admin-accessToken");
+            userInfo.setPhone("13988430117");
+            userInfo.setPhone("13988430117@163.com");
+            return userInfo;
+        }
+        throw new BusinessException(-1, "请登录！");
+    }
+    public static UserInfo getUserInfo(String token) {
+        /**
+         * 先写死返回，后续登录完成则完成
+         */
+        if("admin-accessToken".equals(token)){
+            UserInfo userInfo = new UserInfo();
+            userInfo.setUserId(1L);
+            userInfo.setUserName("admin");
+            userInfo.setCusId(1L);
+            userInfo.setTenantId(1L);
+            userInfo.setAccessToken("admin-accessToken");
             userInfo.setPhone("13988430117");
             userInfo.setPhone("13988430117@163.com");
             return userInfo;
