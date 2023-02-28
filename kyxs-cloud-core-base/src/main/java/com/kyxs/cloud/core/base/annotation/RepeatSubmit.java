@@ -15,7 +15,7 @@ public @interface RepeatSubmit {
     // redis的key
     String prefix() default "resubmitCheckKey::";
     //过期时间
-    int expire() default 10;
+    int expire() default 5;
     //时间单位
     TimeUnit timeUnit() default TimeUnit.SECONDS;
 }

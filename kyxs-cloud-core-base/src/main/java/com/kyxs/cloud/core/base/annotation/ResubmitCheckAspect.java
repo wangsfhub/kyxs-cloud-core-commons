@@ -63,6 +63,7 @@ public class ResubmitCheckAspect {
             } else {
                 result=(R<Object>) pjp.proceed();
             }
+            return result;
         }   catch (BusinessException bexception) {
             result = new R<>();
             result.setCode(bexception.getCode());
@@ -75,10 +76,10 @@ public class ResubmitCheckAspect {
             result.setMsg("服务器异常，请联系管理员");
             throwable.printStackTrace();
             throw new BusinessException("服务器异常，请联系管理员");
-        } finally {
-            redisLock.unlock(key,value);
+        }finally {
+           redisLock.unlock(key,value);
         }
-        return result;
+
     }
 
     public static String getKey(String prefix){
