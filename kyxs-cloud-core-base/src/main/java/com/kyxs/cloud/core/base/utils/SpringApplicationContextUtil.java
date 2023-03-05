@@ -2,7 +2,9 @@ package com.kyxs.cloud.core.base.utils;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.stereotype.Component;
 
+@Component
 public class SpringApplicationContextUtil implements ApplicationContextAware {
     private static ApplicationContext applicationContext;
 
